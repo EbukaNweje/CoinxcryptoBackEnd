@@ -123,9 +123,9 @@ exports.resendotp = async (req,res,next) => {
      <h1 style="font-size:30px; color: red;"><b>${newUser.otp}</b></h1>
 
      <p>
-     Swiftearnprime
+     Coinxcrypto
      </p> <br>
-     <p>swiftearnprime.org</p>
+     <p>coinxcrypto.org</p>
       `,
   }
 
@@ -164,17 +164,17 @@ exports.verifySuccessful = async (req, res, next) => {
         html: `
          <h3 style="font-size:25px;">Hi ${verifyuser.userName}!</h3> 
 
-         <span>Welcome to swiftearnprime PLATFORM.</span>
+         <span>Welcome to Coinxcrypto PLATFORM.</span>
 
          <span> Your Trading account has been set up successfully,
 
          You can go ahead and fund your Trade account to start up your Trade immediately.
 
-         For more enquiry kindly contact your account manager or write directly with our live chat support on our platform  <br> or you can send a direct mail to us at  swiftearnprime@gmail.com. <br> <br>
+         For more enquiry kindly contact your account manager or write directly with our live chat support on our platform  <br> or you can send a direct mail to us at  coinxcryptostocks@gmail.com. <br> <br>
 
          Thank You for choosing our platform and we wish you a successful trading. <br>
 
-         Swiftearnprime TEAM (C)</span>
+         Coinxcrypto TEAM (C)</span>
           `,
       }
 
@@ -262,7 +262,7 @@ exports.loginEmail = async (req, res, next) =>{
     <p>
     Welcome to Coinxcrypto PLATFORM. Your Trading account has been set up successfully, You can go ahead and fund your Trade account to start up your Trade immediately. For more enquiry kindly contact 
     your account manager or write directly with our live chat support on our platform
-    or you can send a direct mail to us at coinxcryptostocks@gmail.com.
+    or you can send a direct mail to us at coinxcryptostocks@gmail.com
     </p>
 
      <p>Regards, <br>
