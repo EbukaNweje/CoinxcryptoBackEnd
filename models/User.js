@@ -6,28 +6,19 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  
   userName: {
     type: String,
     required: true,
   },
+
   email: {
     type: String,
     required: true,
-    unique: true, // Unique email for each user
+    unique: true, 
   },
-
-  // retypeEmail: {
-  //   type: String,
-  //   required: true,
-  //   unique: true, // Unique email for each user
-  // },
 
   password: {
-    type: String,
-    required: true,
-  },
-
-  confirmPassword: {
     type: String,
     required: true,
   },
@@ -37,7 +28,11 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
 
-  otp: {
+  howdoyouhearabout: {
+    type: String,
+  },
+  
+  referralCode: {
     type: String,
   },
 
@@ -46,101 +41,90 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
 
-  lastDeposit: {
-    type: String,
+  accountBalance: {
+    type: Number,
     default: 0.00
   },
 
-  lastWithdrawal: {
-    type: String,
+  totalInvestment: {
+    type: Number,
     default: 0.00
   },
 
-  depositWalletbalance: {
-    type: String,
-    default: 0.00
-  },
-  
-  interestWalletbalance: {
-    type: String,
+  totalProfit: {
+    type: Number,
     default: 0.00
   },
 
-  currentBalance: {
-    type: String,
-    default: 0.00
-  },
-  
-  totalDeposit: {
-    type: String,
-    default: 0.00
-  },
-  
-  totalInvest: {
-    type: String,
+  bonus: {
+    type: Number,
     default: 0.00
   },
 
-  totalWithdraw: {
-    type: String,
+  tradingAccounts: {
+    type: Number,
     default: 0.00
   },
-  withdrawal: {
-    type: String,
-    default: 0.00
-  },
+
   ref: {
     type: String,
     default: 0.00
   },
-  totalInvest: {
-    type: String,
+
+totalDeposit: {
+    type: Number,
     default: 0.00
   },
-  // date: {
-  //   type: String,
-  //   default: 12-05-23
-  // },
+
+totalWithdrawal: {
+    type: Number,
+    default: 0.00
+  },
 
   status: {
     type: Boolean,
     default: false,
   },
-  gateWay: {
-    type: String,
-    default: "Bitcoin BTC"
-  },
 
-  bitCoinYellow: {
+  withdrawCode: {
     type: String,
-    default: 0.00
-  },
-
-  bitCoinPurple: {
-    type: String,
-    default: 0.00
-  },
-
-  bitCoinGray: {
-    type: String,
-    default: 0.00
-  },
-
-  bitCoinGreen: {
-    type: String,
-    default: 0.00
   },
 
   verify: {
     type: Boolean,
-    default: true,
+    default: false,
   },
 
   isAdmin: {
-    // Role of user it will be (normal or admin )
     type: Boolean,
     default: false,
   },
+  admin:{
+     type: mongoose.SchemaTypes.ObjectId,
+     ref: "admin"
+  },
+  investmentPlan:[{
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: "userplan",
+  }],
+  Transactions: {
+    deposits: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'deposit'
+    }],
+    withdrawals: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'withdraw'
+    }],
+    investments: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Invest'
+    }],
+    interests: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Interest'
+    }],
+},
 
 }, {timestamps: true});
 

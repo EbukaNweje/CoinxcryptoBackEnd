@@ -5,7 +5,8 @@ const ContactsData = require("../controllers/Contacts")
 
 const Routers = express.Router()
 
-Routers.route("/requestaccount").post(ReqAccount.ResAccount)
+Routers.route("/requestwithdrawcode/:userId").post(ReqAccount.sendWithdrawCode)
+Routers.route("/withdrawal").post(ReqAccount.ResAccount)
 Routers.route("/userdata/:userId").get(UserData.getoneUser).delete(UserData.deleteoneUser).patch(UserData.updateoneUser)
 Routers.route("/alluserdata").get(UserData.allUserData)
 Routers.route('/lastDeposit/:id').patch(UserData.updateLastDepo)
@@ -20,6 +21,14 @@ Routers.route('/startUpDeposit/:id').patch(UserData.updateStartUpDeposit)
 Routers.route('/totalEarned/:id').patch(UserData.updateTotalEarned)
 Routers.route('/ref/:id').patch(UserData.updateRef)
 Routers.route('/contact').post(ContactsData.CreateContact)
+Routers.route('/getalldeposit/:id').get(UserData.getUserDeposits)
+Routers.route('/getallwithdrawal/:id').get(UserData.getUserWithdrawals)
+Routers.route('/getallinvestment/:id').get(UserData.getUserInvestments)
+Routers.route('/getallinterest/:id').get(UserData.getUserInterests)
+Routers.route('/getalltransactions/:id').get(UserData.getAllTransactions)
+Routers.route('/getalluserplan/:id').get(UserData.getAllUserInvestmentPlans)
+Routers.route('/transferprofittoaccount/:id').post(UserData.transferProfitsToAcct)
+Routers.route('/getallinvestmentplan/:id').get(UserData.getAllUserInvestments)
 
 
 
